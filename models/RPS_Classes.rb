@@ -1,8 +1,8 @@
 class Player 
 	attr_accessor :name, :choice, :wins, :losses
-	def initialize
+	def initialize(name)
 		puts "What is your name?"
-		@name = gets.chomp
+		@name = name
 		@wins = 0
 		@losses = 0
 		
@@ -13,7 +13,7 @@ class RPS_game
 	def initialize(player)
 	puts "r, p, s?"
 	@player = player
-	@choice = gets.chomp
+	@choice = 
 	@computer_choice = ["r", "p", "s"].sample
 	puts @computer_choice
 	play_rps
