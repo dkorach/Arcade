@@ -1,75 +1,51 @@
+
 class Player 
-	attr_accessor :name, :choice 
-	def initialize
-		puts "What is your name?"
-		@name = gets.chomp
-		@wins = 0
-		@losses = 0
-		
+	attr_accessor :name, :weapon
+
+	def weapon_choice 
+		puts "Choose your weapon: rock, paper or scissors" 
+		@weapon = gets.chomp 
+	end
+
+	def computer_choice 
+		["rock", "paper", "scissors"].shuffle.first
 	end 
+ 
 end
 
-class RPS_game 
+
+class Game 
 	def initialize
-	puts "r, p, s?"
-	@choice = gets.chomp
-	@computer_choice = ["r", "p", "s"].sample
-	def play_rps
-		case @choice
-		when "r"
-				case computer_choice
-				when "r"
-					puts "You Tie! Your record is: #{wins}-#{losses}"
-					self.play_rps
+		player = Player.new
+		puts "What's your name!?"
+		player.name = gets.chomp
+		puts "Welcome #{player.name}!"
+		@computer = player.computer_choice
+		@weapon = player.weapon_choice
+		puts @computer
+	end
 
-				when "s"	
-					puts "You Win! Your record is: #{wins}-#{losses}"
-					@wins = @wins + 1 
-					self.play_rps
-
-				when "p"	
-					puts "You Lose! Your record is: #{wins}-#{losses}"
-					self.play_rps
-					@losses = @losses + 1
-				end
-		when "p"
-				case computer_choice
-				when "p"
-					puts "You Tie! Your record is: #{wins}-#{losses}"
-					self.play_rps
-
-				when "r"
-					puts "You Win! Your record is: #{wins}-#{losses}"
-					@wins = @wins + 1 
-					self.play_rps
-
-				when "s"		
-					puts "You Lose! Your record is: #{wins}-#{losses}"
-					self.play_rps 
-					@losses = @losses + 1
-				end
-		
-		when "s"
-				case computer_choice
-				when "s"
-
-					puts "You Tie! Your record is: #{wins}-#{losses}"
-					self.play_rps
-
-				when "p"
-
-					puts "You Win! Your record is: #{wins}-#{losses}"
-					@wins = @wins + 1 
-					self.play_rps
-
-				when "r"
-				
-					puts "You Lose! Your record is: #{wins}-#{losses}"
-					self.play_rps
-					@losses = @losses + 1
-				end
-		end
+def game_time
+	if @computer == "rock" && @weapon == "scissors" 
+		then puts "Computer wins!"
+	elsif @computer == @weapon
+		then puts "It's a tie!"
+	elsif @computer == "scissors" && @weapon == "paper"
+		then puts "computer wins!"
+	elsif @computer == "paper" && @weapon == "rock"
+		then puts "Computer Wins"
+	elsif @computer == "scissors" && @weapon == "rock"
+		then puts "You win!"
+	elsif @computer == "paper" && @weapon == "scissors"
+		then puts "You win!"
+	elsif @computer == "rock" && @weapon == "paper"
+		then puts "You Win!"
 	end
 end
-# Player.new
-# RPS_game.new
+
+end
+
+victory = Game.new
+victory.game_time
+
+
