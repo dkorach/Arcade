@@ -41,7 +41,8 @@ end
 
 end
 
-victory = Game.new
+game = Player.new("game")
+victory = Game.new(game)
 victory.game_time
 
 
