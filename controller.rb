@@ -1,5 +1,5 @@
 require 'sinatra'
-require_relative 'models/RPS_Classes.rb'
+require_relative 'models/RPSclasses.rb'
 
 
 get '/' do 
@@ -9,9 +9,8 @@ end
 
 post '/' do
 	p1 = Player.new(params[:name])
-
+	p1.weapon = params[:weapon]
 	game = Game.new(p1)
-
-	p1.response = params[:choice]
+	game.game_time 
 
 end

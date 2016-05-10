@@ -1,10 +1,10 @@
 
 class Player 
+	
 	attr_accessor :name, :weapon
 
-	def weapon_choice 
-		puts "Choose your weapon: rock, paper or scissors" 
-		@weapon = gets.chomp 
+	def initialize(name)
+		@name = name
 	end
 
 	def computer_choice 
@@ -15,13 +15,9 @@ end
 
 
 class Game 
-	def initialize
-		player = Player.new
-		puts "What's your name!?"
-		player.name = gets.chomp
-		puts "Welcome #{player.name}!"
+	def initialize(player)
 		@computer = player.computer_choice
-		@weapon = player.weapon_choice
+		@weapon = player.weapon
 		puts @computer
 	end
 
