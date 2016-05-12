@@ -1,7 +1,7 @@
 
 class Player 
 	
-	attr_accessor :name, :weapon
+	attr_accessor :name, :weapon, :wins, :losses
 
 	def initialize(name)
 		@name = name
