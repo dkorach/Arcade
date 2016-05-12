@@ -5,16 +5,15 @@
 	
 
 	<h3> Player 1 Choice </h3>
-	<select name="p1 Choice">
-  <option value="Rock">Rock</option>
-  <option value="Scissors">Scissors</option>
-  <option value="Paper">Paper </option>
+	<select name="weapon">
+  <option value="rock">rock</option>
+  <option value="scissors">scissors</option>
+  <option value="paper">paper </option>
 
 
 	<input type="submit">
 </form>
 
-<% if something %>
-	
-
-	<% end %>
+<% if @game_time %>
+	<%= @game_time %>
+<% end %>

@@ -22,20 +22,24 @@ class Game
 	end
 
 def game_time
+	puts @computer
+	puts @weapon
 	if @computer == "rock" && @weapon == "scissors" 
-		then puts "Computer wins!"
+	 "Computer wins!"
 	elsif @computer == @weapon
-		then puts "It's a tie!"
+	 "It's a tie!"
 	elsif @computer == "scissors" && @weapon == "paper"
-		then puts "computer wins!"
+	 "computer wins!"
 	elsif @computer == "paper" && @weapon == "rock"
-		then puts "Computer Wins"
+	 "Computer Wins"
 	elsif @computer == "scissors" && @weapon == "rock"
-		then puts "You win!"
+	 "You win!"
 	elsif @computer == "paper" && @weapon == "scissors"
-		then puts "You win!"
+	 "You win!"
 	elsif @computer == "rock" && @weapon == "paper"
-		then puts "You Win!"
+	 "You Win!"
+	else 
+	"You are awesome"
 	end
 end
 
